@@ -1,9 +1,10 @@
-# Film API
+# Film API + Docker Testing
 Using 5 basic HTTP requests: GET, POST, PUT, PATCH and DELETE.
 
 # This API allows you to receive data on all films that are available, film genre, order films or books etc.
 
 # Creating Film API requests with Film documentation using Postman tool, as part of one of the modules during my time within Software Testing bootcamp
+# I also decided to test the API further by using Docker for testing using Postman and Newman, by testing one of my GET collection requests. As I am learning DevOps, I wanted to incorporate Postman with Docker together with a previous project to further my skills in Docker, whilst also learning the importance of security and reliability when automating systems such as API calls within businesses.
 
 Writing simple tests/scripts using variables and JSON.
 
@@ -87,7 +88,6 @@ Requires same Bearer Token with 'Auth', allowing you to view an existing order
   
   DEL /orders/orderID
   
-  
-  
+
 
 
