@@ -4,7 +4,7 @@ Using 5 basic HTTP requests: GET, POST, PUT, PATCH and DELETE.
 # This API allows you to receive data on all films that are available, film genre, order films or books etc.
 
 # Creating Film API requests with Film documentation using Postman tool, as part of one of the modules during my time within Software Testing bootcamp
-# I also decided to test the API further by using Docker for testing using Postman and Newman, by testing one of my GET collection requests. As I am learning DevOps, I wanted to incorporate Postman with Docker together with a previous project to further my skills in Docker, whilst also learning the importance of security and reliability when automating systems such as API calls within businesses.
+# I also decided to extend the project further by using Docker container to automate the testing using Postman and Newman, by using one of my GET collection requests. As I am learning DevOps, I wanted to incorporate Postman with Docker together with a previous project to further my skills in Docker, whilst also learning the importance of security and reliability when automating systems such as API calls within businesses.
 
 Writing simple tests/scripts using variables and JSON.
 
@@ -87,7 +87,32 @@ Requires same Bearer Token with 'Auth', allowing you to view an existing order
   Delete your order, including the same Bearer Token and ID number within url.
   
   DEL /orders/orderID
-  
+
+
+  # Running Postman collection in Docker
+
+  I made sure that Docker desktop was running.
+  Next, I ran the CLI in Command, 'docker pull postman/newman' 
 
 
 
+![docker newman pull](https://github.com/liaelevn/Film-Rest-API-project/assets/112964705/ec4f3499-f29a-42a2-8fc8-82d5a66cf91a)
+
+By using the Newman command line, it allows me to use all libraries and collections within Postman so that I am able to run tests in Docker.
+
+
+![docker newman url](https://github.com/liaelevn/Film-Rest-API-project/assets/112964705/b9a7c726-de0e-46d1-85ec-f1ca4a194a97)
+ The 'docker run -t postman/newman' after running the CLI, will now give me a prompt to insert an URL from one of my collections within Postman 
+
+
+ 
+![postman share](https://github.com/liaelevn/Film-Rest-API-project/assets/112964705/277aed82-c4e4-4cb8-9156-0d2aceacd564)
+Within Postman, I chose the GET specific film request and clicked on the 3 dots and selected, 'Share'. This means that I can save the URL within my email to import into the command line in order for the newman cli to run.
+
+
+
+![docker running collection](https://github.com/liaelevn/Film-Rest-API-project/assets/112964705/9ca0a0de-0274-4781-a611-a30472b4b9af)
+The 'docker run -t postman/newman run "https://films-api.qaalabs.com/films?genre=action" ' command helps to officially automate the API collection. Here I am able to view any test scripts, assertions, requests and iterations. I can also view the duration of how long the the API took to run, which was 8 milliseconds with negative results.
+
+# Summary
+By automating the API request using Docker container, it made further my understanding on why this would be key for developers/testers and those working in a devOps team. As the more code there is to test and build and review, the team are able to receive quick feedback regarding the performance of API requests and update code, which is why CI/CD is key to reduce expensive mistakes and bugs before release.
